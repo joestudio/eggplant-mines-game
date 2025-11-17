@@ -127,7 +127,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+    font-family: 'Jacquard 24', 'MS Sans Serif', 'Microsoft Sans Serif', monospace;
   }
   
   .win95-outset {
