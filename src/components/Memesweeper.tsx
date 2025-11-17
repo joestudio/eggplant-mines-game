@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { RotateCcw, Timer, Flag } from "lucide-react";
 import { cn } from "@/lib/utils";
+import memeImage from "@/assets/meme.jpeg";
 
 const GRID_SIZE = 10;
 const EGGPLANT_COUNT = 15;
@@ -183,7 +184,7 @@ const Memesweeper = () => {
             </h1>
           </div>
           <p className="text-foreground text-sm font-jersey">
-            Find all the 🍆 without clicking on them!
+            Find all the memes without clicking on them!
           </p>
         </div>
 
@@ -253,7 +254,7 @@ const Memesweeper = () => {
                 >
                   {cell.isRevealed ? (
                     cell.isEggplant ? (
-                      "🍆"
+                      <img src={memeImage} alt="meme" className="w-full h-full object-cover" />
                     ) : cell.adjacentEggplants > 0 ? (
                       <span className={getCellColor(cell.adjacentEggplants)}>
                         {cell.adjacentEggplants}
