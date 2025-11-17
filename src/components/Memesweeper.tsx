@@ -186,7 +186,7 @@ const Memesweeper = () => {
             </div>
 
             <div className="text-center flex-1">
-              <h1 className="text-2xl font-jersey tracking-wider text-black mb-1">
+              <h1 className="text-4xl font-jersey tracking-wider text-black mb-1">
                 MEMESWEEPER
               </h1>
               <p className="text-foreground text-xs font-jersey">
