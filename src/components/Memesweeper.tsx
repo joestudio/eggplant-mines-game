@@ -195,12 +195,14 @@ const Memesweeper = () => {
               <span className="font-bold text-lg tabular-nums">{flagsRemaining.toString().padStart(3, '0')}</span>
             </div>
 
-            <button
-              onClick={initializeGrid}
-              className="bg-card win95-button px-4 py-2 font-bold hover:bg-muted active:bg-accent transition-colors"
-            >
-              😊
-            </button>
+            {gameStatus !== "playing" && (
+              <button
+                onClick={initializeGrid}
+                className="bg-card win95-button px-4 py-2 font-bold hover:bg-muted active:bg-accent transition-colors text-sm"
+              >
+                Start Over
+              </button>
+            )}
 
             <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
               <span className="font-bold text-lg tabular-nums">{timer.toString().padStart(3, '0')}</span>
