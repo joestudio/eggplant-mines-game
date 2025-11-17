@@ -63,6 +63,11 @@ export default {
           "cell-hover": "hsl(var(--game-cell-hover))",
           border: "hsl(var(--game-border))",
         },
+        win95: {
+          light: "hsl(var(--win95-light))",
+          dark: "hsl(var(--win95-dark))",
+          darker: "hsl(var(--win95-darker))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
