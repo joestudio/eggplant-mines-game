@@ -57,6 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        game: {
+          cell: "hsl(var(--game-cell))",
+          "cell-revealed": "hsl(var(--game-cell-revealed))",
+          "cell-hover": "hsl(var(--game-cell-hover))",
+          border: "hsl(var(--game-border))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
