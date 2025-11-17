@@ -177,52 +177,51 @@ const Memesweeper = () => {
   return (
     <div className="flex min-h-screen items-center justify-center p-4 bg-[#008080]">
       <div className="w-full max-w-2xl">
-        <div className="text-center mb-6">
-          <div className="bg-primary text-primary-foreground px-4 py-2 win95-outset inline-block mb-3">
-            <h1 className="text-3xl font-jersey tracking-wider">
-              MEMESWEEPER
-            </h1>
-          </div>
-          <p className="text-foreground text-sm font-jersey">
-            Find all the memes without clicking on them!
-          </p>
-        </div>
-
-        <div className="bg-card win95-outset p-3">
-          {/* Game Stats */}
-          <div className="flex justify-between items-center mb-4 gap-2">
-            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
+        <div className="bg-card win95-outset p-3 relative">
+          {/* Game Stats Bar with Title */}
+          <div className="flex justify-between items-center mb-4 gap-3">
+            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2 flex-shrink-0">
               <span className="font-bold text-destructive text-2xl">🚩</span>
               <span className="font-jersey text-lg tabular-nums">{flagsRemaining.toString().padStart(3, '0')}</span>
             </div>
 
-            {gameStatus !== "playing" && (
-              <button
-                onClick={initializeGrid}
-                className="bg-card win95-button px-4 py-2 font-jersey hover:bg-muted active:bg-accent transition-colors text-sm"
-              >
-                Start Over
-              </button>
-            )}
+            <div className="text-center flex-1">
+              <div className="bg-primary text-primary-foreground px-3 py-1 win95-outset inline-block mb-1">
+                <h1 className="text-2xl font-jersey tracking-wider">
+                  MEMESWEEPER
+                </h1>
+              </div>
+              <p className="text-foreground text-xs font-jersey">
+                Find all the memes without clicking on them!
+              </p>
+            </div>
 
-            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
+            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2 flex-shrink-0">
               <span className="font-jersey text-lg tabular-nums">{timer.toString().padStart(3, '0')}</span>
               <span className="font-bold text-2xl">⏱️</span>
             </div>
           </div>
 
-          {/* Game Status */}
+          {/* Game Over Overlay */}
           {gameStatus !== "playing" && (
-            <div className="text-center mb-4">
-              <div
-                className={cn(
-                  "inline-block px-6 py-3 win95-outset text-xl font-jersey",
-                  gameStatus === "won"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-destructive text-destructive-foreground"
-                )}
-              >
-                {gameStatus === "won" ? "🎉 You Won!" : "💥 Game Over!"}
+            <div className="absolute inset-0 bg-card/95 flex items-center justify-center z-10 win95-outset">
+              <div className="text-center">
+                <div
+                  className={cn(
+                    "inline-block px-8 py-4 win95-outset text-3xl font-jersey mb-6",
+                    gameStatus === "won"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-destructive text-destructive-foreground"
+                  )}
+                >
+                  {gameStatus === "won" ? "🎉 YOU WIN!" : "💥 GAME OVER"}
+                </div>
+                <button
+                  onClick={initializeGrid}
+                  className="bg-card win95-button px-8 py-3 font-jersey hover:bg-muted active:bg-accent transition-colors text-lg"
+                >
+                  TRY AGAIN
+                </button>
               </div>
             </div>
           )}
