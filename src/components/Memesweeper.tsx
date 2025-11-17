@@ -178,11 +178,11 @@ const Memesweeper = () => {
       <div className="w-full max-w-2xl">
         <div className="text-center mb-6">
           <div className="bg-primary text-primary-foreground px-4 py-2 win95-outset inline-block mb-3">
-            <h1 className="text-3xl font-bold tracking-wider">
+            <h1 className="text-3xl font-jacquard tracking-wider">
               MEMESWEEPER
             </h1>
           </div>
-          <p className="text-foreground text-sm font-bold">
+          <p className="text-foreground text-sm font-jacquard">
             Find all the 🍆 without clicking on them!
           </p>
         </div>
@@ -192,20 +192,20 @@ const Memesweeper = () => {
           <div className="flex justify-between items-center mb-4 gap-2">
             <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
               <span className="font-bold text-destructive text-2xl">🚩</span>
-              <span className="font-bold text-lg tabular-nums">{flagsRemaining.toString().padStart(3, '0')}</span>
+              <span className="font-jacquard text-lg tabular-nums">{flagsRemaining.toString().padStart(3, '0')}</span>
             </div>
 
             {gameStatus !== "playing" && (
               <button
                 onClick={initializeGrid}
-                className="bg-card win95-button px-4 py-2 font-bold hover:bg-muted active:bg-accent transition-colors text-sm"
+                className="bg-card win95-button px-4 py-2 font-jacquard hover:bg-muted active:bg-accent transition-colors text-sm"
               >
                 Start Over
               </button>
             )}
 
             <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
-              <span className="font-bold text-lg tabular-nums">{timer.toString().padStart(3, '0')}</span>
+              <span className="font-jacquard text-lg tabular-nums">{timer.toString().padStart(3, '0')}</span>
               <span className="font-bold text-2xl">⏱️</span>
             </div>
           </div>
@@ -215,7 +215,7 @@ const Memesweeper = () => {
             <div className="text-center mb-4">
               <div
                 className={cn(
-                  "inline-block px-6 py-3 win95-outset text-xl font-bold",
+                  "inline-block px-6 py-3 win95-outset text-xl font-jacquard",
                   gameStatus === "won"
                     ? "bg-primary text-primary-foreground"
                     : "bg-destructive text-destructive-foreground"
@@ -242,7 +242,7 @@ const Memesweeper = () => {
                   onContextMenu={(e) => toggleFlag(rowIndex, colIndex, e)}
                   disabled={gameStatus !== "playing"}
                   className={cn(
-                    "aspect-square flex items-center justify-center text-sm sm:text-base font-bold transition-none",
+                    "aspect-square flex items-center justify-center text-sm sm:text-base font-jacquard transition-none",
                     "focus:outline-none",
                     cell.isRevealed
                       ? cell.isEggplant
@@ -269,7 +269,7 @@ const Memesweeper = () => {
         </div>
 
         <div className="text-center mt-4 bg-card win95-outset px-3 py-2 inline-block">
-          <p className="text-foreground text-xs font-bold">Left click to reveal • Right click to flag</p>
+          <p className="text-foreground text-xs font-jacquard">Left click to reveal • Right click to flag</p>
         </div>
       </div>
     </div>
