@@ -186,11 +186,9 @@ const Memesweeper = () => {
             </div>
 
             <div className="text-center flex-1">
-              <div className="bg-primary text-primary-foreground px-3 py-1 win95-outset inline-block mb-1">
-                <h1 className="text-2xl font-jersey tracking-wider">
-                  MEMESWEEPER
-                </h1>
-              </div>
+              <h1 className="text-2xl font-jersey tracking-wider text-black mb-1">
+                MEMESWEEPER
+              </h1>
               <p className="text-foreground text-xs font-jersey">
                 Find all the memes without clicking on them!
               </p>
