@@ -8,42 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 280 40% 98%;
-    --foreground: 280 50% 15%;
+    --background: 200 15% 85%;
+    --foreground: 0 0% 0%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 280 50% 15%;
+    --card: 0 0% 75%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 280 50% 15%;
+    --popover: 0 0% 75%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 270 70% 55%;
+    --primary: 210 100% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 320 60% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 280 30% 95%;
-    --muted-foreground: 280 20% 50%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 0 0% 20%;
 
-    --accent: 320 70% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 15% 70%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 280 30% 88%;
-    --input: 280 30% 88%;
-    --ring: 270 70% 55%;
+    --border: 0 0% 50%;
+    --input: 0 0% 100%;
+    --ring: 210 100% 40%;
     
-    --game-cell: 280 20% 92%;
-    --game-cell-revealed: 0 0% 100%;
-    --game-cell-hover: 280 25% 88%;
-    --game-border: 280 30% 80%;
+    --game-cell: 0 0% 75%;
+    --game-cell-revealed: 0 0% 82%;
+    --game-cell-hover: 0 0% 78%;
+    --game-border: 0 0% 60%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(270 70% 55%), hsl(320 70% 60%));
-    --shadow-game: 0 2px 8px hsl(280 30% 70% / 0.3);
-    --shadow-cell: 0 2px 4px hsl(280 20% 60% / 0.2);
+    --win95-light: 0 0% 100%;
+    --win95-dark: 0 0% 50%;
+    --win95-darker: 0 0% 25%;
+    
+    --gradient-primary: none;
+    --shadow-game: none;
+    --shadow-cell: none;
 
     --radius: 0.5rem;
 
@@ -65,42 +69,46 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 280 30% 12%;
-    --foreground: 280 20% 95%;
+    --background: 200 15% 85%;
+    --foreground: 0 0% 0%;
 
-    --card: 280 25% 15%;
-    --card-foreground: 280 20% 95%;
+    --card: 0 0% 75%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 280 25% 15%;
-    --popover-foreground: 280 20% 95%;
+    --popover: 0 0% 75%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 270 70% 60%;
+    --primary: 210 100% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 320 60% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 280 20% 20%;
-    --muted-foreground: 280 15% 65%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 0 0% 20%;
 
-    --accent: 320 65% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 15% 70%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 50%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 280 20% 25%;
-    --input: 280 20% 25%;
-    --ring: 270 70% 60%;
+    --border: 0 0% 50%;
+    --input: 0 0% 100%;
+    --ring: 210 100% 40%;
     
-    --game-cell: 280 20% 18%;
-    --game-cell-revealed: 280 15% 22%;
-    --game-cell-hover: 280 20% 25%;
-    --game-border: 280 20% 30%;
+    --game-cell: 0 0% 75%;
+    --game-cell-revealed: 0 0% 82%;
+    --game-cell-hover: 0 0% 78%;
+    --game-border: 0 0% 60%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(270 70% 60%), hsl(320 70% 55%));
-    --shadow-game: 0 4px 12px hsl(0 0% 0% / 0.5);
-    --shadow-cell: 0 2px 4px hsl(0 0% 0% / 0.3);
+    --win95-light: 0 0% 100%;
+    --win95-dark: 0 0% 50%;
+    --win95-darker: 0 0% 25%;
+    
+    --gradient-primary: none;
+    --shadow-game: none;
+    --shadow-cell: none;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -119,5 +127,34 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+  }
+  
+  .win95-outset {
+    border-top: 2px solid hsl(var(--win95-light));
+    border-left: 2px solid hsl(var(--win95-light));
+    border-right: 2px solid hsl(var(--win95-darker));
+    border-bottom: 2px solid hsl(var(--win95-darker));
+  }
+  
+  .win95-inset {
+    border-top: 2px solid hsl(var(--win95-darker));
+    border-left: 2px solid hsl(var(--win95-darker));
+    border-right: 2px solid hsl(var(--win95-light));
+    border-bottom: 2px solid hsl(var(--win95-light));
+  }
+  
+  .win95-button {
+    border-top: 2px solid hsl(var(--win95-light));
+    border-left: 2px solid hsl(var(--win95-light));
+    border-right: 2px solid hsl(var(--win95-darker));
+    border-bottom: 2px solid hsl(var(--win95-darker));
+  }
+  
+  .win95-button:active {
+    border-top: 2px solid hsl(var(--win95-darker));
+    border-left: 2px solid hsl(var(--win95-darker));
+    border-right: 2px solid hsl(var(--win95-light));
+    border-bottom: 2px solid hsl(var(--win95-light));
   }
 }

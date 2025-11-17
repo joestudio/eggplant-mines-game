@@ -174,38 +174,37 @@ const Memesweeper = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4 bg-gradient-to-br from-background via-muted to-background">
+    <div className="flex min-h-screen items-center justify-center p-4 bg-[#008080]">
       <div className="w-full max-w-2xl">
-        <div className="text-center mb-8">
-          <h1 className="text-6xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Memesweeper
-          </h1>
-          <p className="text-muted-foreground text-lg">
+        <div className="text-center mb-6">
+          <div className="bg-primary text-primary-foreground px-4 py-2 win95-outset inline-block mb-3">
+            <h1 className="text-3xl font-bold tracking-wider">
+              MEMESWEEPER
+            </h1>
+          </div>
+          <p className="text-foreground text-sm font-bold">
             Find all the 🍆 without clicking on them!
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl shadow-[var(--shadow-game)] p-6 border border-border">
+        <div className="bg-card win95-outset p-3">
           {/* Game Stats */}
-          <div className="flex justify-between items-center mb-6">
-            <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-lg">
-              <Flag className="w-5 h-5 text-accent" />
-              <span className="font-bold text-lg">{flagsRemaining}</span>
+          <div className="flex justify-between items-center mb-4 gap-2">
+            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
+              <span className="font-bold text-destructive text-2xl">🚩</span>
+              <span className="font-bold text-lg tabular-nums">{flagsRemaining.toString().padStart(3, '0')}</span>
             </div>
 
-            <Button
+            <button
               onClick={initializeGrid}
-              variant="outline"
-              size="lg"
-              className="font-semibold"
+              className="bg-card win95-button px-4 py-2 font-bold hover:bg-muted active:bg-accent transition-colors"
             >
-              <RotateCcw className="w-5 h-5 mr-2" />
-              New Game
-            </Button>
+              😊
+            </button>
 
-            <div className="flex items-center gap-2 bg-muted px-4 py-2 rounded-lg">
-              <Timer className="w-5 h-5 text-primary" />
-              <span className="font-bold text-lg font-mono">{timer}s</span>
+            <div className="flex items-center gap-2 bg-input win95-inset px-3 py-2">
+              <span className="font-bold text-lg tabular-nums">{timer.toString().padStart(3, '0')}</span>
+              <span className="font-bold text-2xl">⏱️</span>
             </div>
           </div>
 
@@ -214,10 +213,10 @@ const Memesweeper = () => {
             <div className="text-center mb-4">
               <div
                 className={cn(
-                  "inline-block px-6 py-3 rounded-xl text-xl font-bold",
+                  "inline-block px-6 py-3 win95-outset text-xl font-bold",
                   gameStatus === "won"
-                    ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white"
-                    : "bg-gradient-to-r from-red-500 to-rose-500 text-white"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-destructive text-destructive-foreground"
                 )}
               >
                 {gameStatus === "won" ? "🎉 You Won!" : "💥 Game Over!"}
@@ -227,9 +226,10 @@ const Memesweeper = () => {
 
           {/* Grid */}
           <div
-            className="grid gap-1 bg-game-border p-2 rounded-xl"
+            className="grid bg-card win95-inset p-1"
             style={{
               gridTemplateColumns: `repeat(${GRID_SIZE}, minmax(0, 1fr))`,
+              gap: "0px"
             }}
           >
             {grid.map((row, rowIndex) =>
@@ -240,13 +240,13 @@ const Memesweeper = () => {
                   onContextMenu={(e) => toggleFlag(rowIndex, colIndex, e)}
                   disabled={gameStatus !== "playing"}
                   className={cn(
-                    "aspect-square flex items-center justify-center text-sm sm:text-base font-bold rounded transition-all duration-200",
-                    "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                    "aspect-square flex items-center justify-center text-sm sm:text-base font-bold transition-none",
+                    "focus:outline-none",
                     cell.isRevealed
                       ? cell.isEggplant
                         ? "bg-destructive text-destructive-foreground text-2xl"
-                        : "bg-game-cell-revealed shadow-inner"
-                      : "bg-game-cell hover:bg-game-cell-hover shadow-[var(--shadow-cell)] active:shadow-inner cursor-pointer"
+                        : "bg-game-cell-revealed text-foreground border border-win95-dark"
+                      : "bg-game-cell win95-button cursor-pointer hover:bg-game-cell-hover"
                   )}
                 >
                   {cell.isRevealed ? (
@@ -258,7 +258,7 @@ const Memesweeper = () => {
                       </span>
                     ) : null
                   ) : cell.isFlagged ? (
-                    <span className="text-accent text-xl">🚩</span>
+                    <span className="text-2xl">🚩</span>
                   ) : null}
                 </button>
               ))
@@ -266,8 +266,8 @@ const Memesweeper = () => {
           </div>
         </div>
 
-        <div className="text-center mt-6 text-muted-foreground text-sm">
-          <p>Left click to reveal • Right click to flag</p>
+        <div className="text-center mt-4 bg-card win95-outset px-3 py-2 inline-block">
+          <p className="text-foreground text-xs font-bold">Left click to reveal • Right click to flag</p>
         </div>
       </div>
     </div>
