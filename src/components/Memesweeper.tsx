@@ -202,8 +202,8 @@ const Memesweeper = () => {
 
           {/* Game Over Overlay */}
           {gameStatus !== "playing" && (
-            <div className="absolute inset-0 bg-card/95 flex items-center justify-center z-10 win95-outset">
-              <div className="text-center flex flex-col items-center gap-6">
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+              <div className="bg-card win95-outset p-6 flex flex-col items-center gap-4">
                 <div
                   className={cn(
                     "inline-block px-8 py-4 win95-outset text-3xl font-jersey",
